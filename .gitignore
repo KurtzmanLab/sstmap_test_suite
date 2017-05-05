@@ -1,4 +1,20 @@
 # Byte-compiled / optimized / DLL files
+platforms/*/*.dx
+platforms/*/*.dat
+platforms/*/cluster*.pdb
+platforms/*/entropy_output
+platforms/*/md1ns.*
+platforms/*/*hsa_data
+
+water_models/*/*.dx
+water_models/*/*.dat
+water_models/*/cluster*.pdb
+water_models/*/entropy_output
+water_models/*/md1ns.*
+water_models/*/*hsa_data
+.DS_Store
+*/**/.DS_Store
+
 __pycache__/
 *.py[cod]
 *$py.class
