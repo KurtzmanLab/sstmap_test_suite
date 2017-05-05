@@ -1,10 +1,9 @@
 # Byte-compiled / optimized / DLL files
-platforms/*/*.nc
 platforms/*/*.dx
 platforms/*/*.dat
 platforms/*/cluster*.pdb
 platforms/*/entropy_output
-platforms/*/md1ns.*
+platforms/*/md*
 platforms/*/*hsa_data
 
 water_models/*/*.nc
@@ -12,7 +11,7 @@ water_models/*/*.dx
 water_models/*/*.dat
 water_models/*/cluster*.pdb
 water_models/*/entropy_output
-water_models/*/md1ns.*
+water_models/*/md*
 water_models/*/*hsa_data
 .DS_Store
 */**/.DS_Store
