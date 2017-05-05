@@ -1,4 +1,24 @@
 # Byte-compiled / optimized / DLL files
+platforms/*/*.nc
+platforms/*/*.dx
+platforms/*/*.dat
+platforms/*/*cluster*.pdb
+platforms/*/testcase*.pdb
+platforms/*/entropy_output
+platforms/*/md*
+platforms/*/*hsa_data
+
+water_models/*/*.nc
+water_models/*/*.dx
+water_models/*/*.dat
+water_models/*/cluster*.pdb
+water_models/*/entropy_output
+water_models/*/md*
+water_models/*/*hsa_data
+.DS_Store
+*/**/.DS_Store
+*/**/md*
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -87,3 +107,4 @@ ENV/
 
 # Rope project settings
 .ropeproject
+./water_models/tip5p/md100ps.nc
