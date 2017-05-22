@@ -1,23 +1,31 @@
 import sys
 import os
-#sys.path.append("/Users/kamranhaider/Dropbox/SSTMap/sstmap")
+import shutil
 
 from sstmap.site_water_analysis import SiteWaterAnalysis
-
 platforms = ["amber", "charmm", "desmond", "gromacs", "namd", "openmm"]
 top_ext = [".prmtop", ".psf", ".pdb", ".gro", ".psf", ".parm7"]
 trj_ext = [".nc", ".dcd", ".nc", ".xtc", ".dcd", ".nc"]
 supp_ext = [None, "toppar", "params.txt", "params.top", "toppar", None]
+curr_dir = os.getcwd()
 
 for index, platform in enumerate(platforms):
     print("Testing: %s" % platform)
-    os.chdir(platform)
-    top = "testcase" + top_ext[index]
-    traj = "md100ps" + trj_ext[index]
-    supp = supp_ext[index]
-    ligand = "ligand.pdb"
+    data_dir = platform + "/hsa_output"
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+    else:
+        shutil.rmtree(data_dir)           #removes all the subdirectories!
+        os.makedirs(data_dir)
+    top = os.path.abspath(platform + "/" + "testcase" + top_ext[index])
+    traj = os.path.abspath(platform + "/" + "md100ps" + trj_ext[index])
+    supp = None
+    if supp_ext[index] is not None:
+        supp = os.path.abspath(platform + "/" + supp_ext[index])
+    ligand = os.path.abspath(platform + "/" + "ligand.pdb")
     s = 0
     n = 100
+    os.chdir(data_dir)
     hsa = SiteWaterAnalysis(top, traj, start_frame=s, num_frames=n, 
                         ligand_file=ligand, supporting_file=supp,
                         prefix="testcase")
@@ -26,5 +34,4 @@ for index, platform in enumerate(platforms):
     hsa.calculate_site_quantities()
     hsa.write_calculation_summary()
     hsa.write_data()
-    os.chdir("../")
-
+    os.chdir(curr_dir)
