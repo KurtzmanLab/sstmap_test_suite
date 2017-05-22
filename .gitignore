@@ -1,23 +1,13 @@
-# Byte-compiled / optimized / DLL files
-platforms/*/*.nc
-platforms/*/*.dx
-platforms/*/*.dat
-platforms/*/*cluster*.pdb
-platforms/*/testcase*.pdb
-platforms/*/entropy_output
-platforms/*/md*
-platforms/*/*hsa_data
+**/*output*
 
-water_models/*/*.nc
-water_models/*/*.dx
-water_models/*/*.dat
-water_models/*/cluster*.pdb
-water_models/*/entropy_output
-water_models/*/md*
-water_models/*/*hsa_data
+**/*.nc
+**/md*
+
+
+# Byte-compiled / optimized / DLL files
+
 .DS_Store
 */**/.DS_Store
-*/**/md*
 
 __pycache__/
 *.py[cod]
