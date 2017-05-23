@@ -32,9 +32,9 @@ for index, platform in enumerate(platforms):
                             grid_dimensions=[20.0, 20.0, 20.0],
                             prefix="testcase")
         gist.print_system_summary()
-        gist.calculate_grid_quantities()
+        gist.calculate_grid_quantities(hbonds=True)
         gist.write_data()
-        #gist.generate_dx_files()
+        gist.print_calcs_summary()
         os.chdir(curr_dir)
 
 

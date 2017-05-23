@@ -31,7 +31,7 @@ for index, platform in enumerate(platforms):
                         prefix="testcase")
     hsa.print_system_summary()
     hsa.initialize_hydration_sites()
-    hsa.calculate_site_quantities()
+    hsa.calculate_site_quantities(hbonds=True)
     hsa.write_calculation_summary()
     hsa.write_data()
     os.chdir(curr_dir)
