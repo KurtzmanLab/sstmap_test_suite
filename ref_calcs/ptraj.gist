@@ -1,0 +1,6 @@
+parm ../platforms/amber/testcase.prmtop
+trajin ../platforms/amber/md100ps.nc 0 100
+gist gridcntr 18.030 17.173 17.058 griddim 48 48 48 gridspacn 0.50 out gist-all.out
+go
+quit
+
