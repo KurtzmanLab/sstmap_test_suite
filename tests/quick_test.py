@@ -1,4 +1,3 @@
-import sys
 import os
 import shutil
 from sstmap.grid_water_analysis import GridWaterAnalysis

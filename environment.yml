@@ -1,0 +1,12 @@
+name: sstmap-dev-test
+dependencies:
+  - numpy=1.14.0
+  - python=3.6
+  - jupyter
+  - gsl=2.2.1
+  - matplotlib
+  - scipy
+  - mdtraj
+  - libgcc
+  - parmed
+  - sstmap 
